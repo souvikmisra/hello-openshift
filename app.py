@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-	subprocess.Popen("/bin/bash -c 'source /opt/intel/openvino/bin/setupvars.sh';cd /opt/pneumonia-classification/application/;python3 pneumonia_classification.py -m ../resources/FP32/model.xml", shell=True) 
+	subprocess.Popen("/bin/bash -c 'source /opt/intel/openvino/bin/setupvars.sh; cd /opt/pneumonia-classification/application/; python3 pneumonia_classification.py -m ../resources/FP32/model.xml -o /opt/output'", shell=True) 
 	return "Welcome, inference is running"
 
 @app.route('/dont run')
