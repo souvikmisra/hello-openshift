@@ -1,10 +1,11 @@
 import os
+import subprocess
 from flask import Flask
 app = Flask(__name__)
 
 @app.route("/")
 def main():
-	os.system("deployment_tools/demo/demo_security_barrier_camera.sh -d CPU -sample-options -no_show")
+	subprocess.Popen("/bin/bash -c 'source /opt/intel/openvino/bin/setupvars.sh';cd /opt/pneumonia-classification/application/;python3 pneumonia_classification.py -m ../resources/FP32/model.xml", shell=True) 
 	return "Welcome, inference is running"
 
 @app.route('/dont run')
