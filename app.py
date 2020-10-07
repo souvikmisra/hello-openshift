@@ -1,13 +1,17 @@
 import os
 import subprocess
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 
 @app.route("/")
 def main():
+	if 'image' in request.args:
+		url = request.args['image']
+		cmd = "wget " + url + " -O /opt/output/input.jpeg"
+		os.system(cmd)
 	p = subprocess.Popen("/bin/bash -c 'source /opt/intel/openvino/bin/setupvars.sh; cd /opt/pneumonia-classification/application/; python3 pneumonia_classification.py -m ../resources/FP32/model.xml -o /opt/output'", shell=True) 
 	p.wait()
-	output = subprocess.check_output(['/bin/cat', '/opt/output/stats.txt'])
+	output = subprocess.check_output(['/bin/cat', '/opt/output/result.txt'])
 	return "Inference completed. " + output.decode("utf-8")
 
 @app.route('/dont run')

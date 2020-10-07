@@ -1,0 +1,8 @@
+{
+
+    "inputs": [
+	    {
+            "image": "/opt/output/input.jpeg"
+        }
+    ]
+}
