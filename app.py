@@ -1,22 +1,22 @@
-import os
-import subprocess
-from flask import Flask, render_template
-app = Flask(__name__)
+import logging
 
-@app.route("/")
 def main():
-	p = subprocess.Popen("/bin/bash -c 'source /opt/intel/openvino/bin/setupvars.sh; cd /opt/brain-tumor-segmentations/application/; python3 brain_tumor_segmentation.py -m ../resources/output/IR_models/FP32/saved_model.xml -d CPU --data_file ../resources/Task01_BrainTumour.h5 -r /opt/static/'", shell=True) 
-	p.wait()
-	output = subprocess.check_output(['/bin/cat', '/opt/static/stats.txt'])
-	return "Inference completed. " + output.decode("utf-8")
-
-@app.route('/dont run')
-def hello():
-	return 'Inference is not running'
-@app.route('/result')
-def show_index():
-    full_filename = 'pred0.png'
-    return render_template("index.html", user_image = full_filename)
-
-if __name__ == "__main__":
-	app.run(host="0.0.0.0", port=8080)
+	# Configure the logging system
+	logging.basicConfig(filename ='/opt/results/app.log',
+						level = logging.ERROR)
+	
+	# Variables (to make the calls that follow work)
+	hostname = 'www.python.org'
+	item = 'spam'
+	filename = 'data.csv'
+	mode = 'r'
+	
+	# Example logging calls (insert into your program)
+	logging.critical('Host %s unknown', hostname)
+	logging.error("Couldn't find %r", item)
+	logging.warning('Feature is deprecated')
+	logging.info('Opening file %r, mode = %r', filename, mode)
+	logging.debug('Got here')
+	
+if __name__ == '__main__':
+main()
