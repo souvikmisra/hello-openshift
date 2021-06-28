@@ -13,6 +13,7 @@ def main():
 	
 	# Example logging calls (insert into your program)
 	print("hello world")
+	logging.info("hello world")
 	
 if __name__ == '__main__':
 	main()
