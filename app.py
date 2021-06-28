@@ -3,7 +3,7 @@ import sys
 
 def main():
 	# Configure the logging system
-	logging.basicConfig(filename ='/opt/results/app.txt', level = logging.ERROR)
+	logging.basicConfig(filename ='/opt/results/app-log.txt', level = logging.ERROR)
 	
 	# Variables (to make the calls that follow work)
 	hostname = 'www.python.org'
@@ -12,8 +12,8 @@ def main():
 	mode = 'r'
 	
 	# Example logging calls (insert into your program)
-	logging.info("hello you are seeing log file.")
+	print("hello world")
 	
 if __name__ == '__main__':
 	main()
-	sys.exit(0)
+sys.exit
