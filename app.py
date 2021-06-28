@@ -1,8 +1,9 @@
 import logging
+import sys
 
 def main():
 	# Configure the logging system
-	logging.basicConfig(filename ='/opt/results/app.log', level = logging.ERROR)
+	logging.basicConfig(filename ='/opt/results/app.txt', level = logging.ERROR)
 	
 	# Variables (to make the calls that follow work)
 	hostname = 'www.python.org'
@@ -11,13 +12,8 @@ def main():
 	mode = 'r'
 	
 	# Example logging calls (insert into your program)
-	logging.critical('Host %s unknown', hostname)
-	logging.error("Couldn't find %r", item)
-	logging.warning('Feature is deprecated')
-	logging.info('Opening file %r, mode = %r', filename, mode)
-	logging.debug('Got here')
-	print("hello world")
-	input("Enter your name:")
+	logging.info("hello you are seeing log file.")
 	
 if __name__ == '__main__':
 	main()
+	sys.exit(0)
