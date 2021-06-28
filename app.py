@@ -4,7 +4,7 @@ from time import gmtime, strftime
 
 def main():
 	# Configure the logging system
-	logging.basicConfig(filename ='/opt/results/app-log.txt', level = logging.ERROR)
+	logging.basicConfig(filename ='/opt/results/app-log.txt', level = logging.INFO)
 	
 	# Variables (to make the calls that follow work)
 	hostname = 'www.python.org'
