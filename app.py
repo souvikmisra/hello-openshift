@@ -16,6 +16,7 @@ def main():
 	logging.warning('Feature is deprecated')
 	logging.info('Opening file %r, mode = %r', filename, mode)
 	logging.debug('Got here')
+	raw_input()
 	
 if __name__ == '__main__':
 	main()
