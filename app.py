@@ -17,7 +17,7 @@ def main():
 	logging.info('Opening file %r, mode = %r', filename, mode)
 	logging.debug('Got here')
 	print("hello world")
-	raw_input()
+	input("Enter your name:")
 	
 if __name__ == '__main__':
 	main()
