@@ -2,8 +2,7 @@ import logging
 
 def main():
 	# Configure the logging system
-	logging.basicConfig(filename ='/opt/results/app.log',
-						level = logging.ERROR)
+	logging.basicConfig(filename ='/opt/results/app.log', level = logging.ERROR)
 	
 	# Variables (to make the calls that follow work)
 	hostname = 'www.python.org'
@@ -19,4 +18,4 @@ def main():
 	logging.debug('Got here')
 	
 if __name__ == '__main__':
-main()
+	main()
