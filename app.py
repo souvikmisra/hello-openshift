@@ -4,7 +4,7 @@ from time import gmtime, strftime
 
 def main():
 	# Configure the logging system
-	logging.basicConfig(filename ='/opt/results/app-log.txt', level = logging.INFO)
+	logging.basicConfig(filename ='/opt/results/app-log-branch3.txt', level = logging.INFO)
 	
 	# Variables (to make the calls that follow work)
 	hostname = 'www.python.org'
@@ -13,8 +13,8 @@ def main():
 	mode = 'r'
 	
 	# Example logging calls (insert into your program)
-	print("hello world")
-	logging.info("hello world")
+	print("hello world branch3")
+	logging.info("hello world branch3")
 	logging.info(strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 	
 if __name__ == '__main__':
