@@ -13,7 +13,7 @@ def main():
 	mode = 'r'
 	
 	# Example logging calls (insert into your program)
-	print("hello world")
+	print "hello world"
 	logging.info("hello world")
 	logging.info(strftime("%Y-%m-%d %H:%M:%S", gmtime()))
 	
